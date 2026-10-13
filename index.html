@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Пианино и плейлист</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+
+    <section class="card player">
+      <h2 id="nowTitle">—</h2>
+      <canvas id="viz" class="viz"></canvas>
+      <div class="seek">
+        <span id="tCur">0:00</span>
+        <input id="seek" class="range" type="range" min="0" max="1000" value="0" aria-label="Перемотка">
+        <span id="tDur">0:00</span>
+      </div>
+      <div class="controls">
+        <button id="btnPrev" class="btn" type="button" aria-label="Предыдущий">⏮</button>
+        <button id="btnPlay" class="btn play" type="button" aria-label="Играть / пауза">▶</button>
+        <button id="btnNext" class="btn" type="button" aria-label="Следующий">⏭</button>
+      </div>
+      <input id="volume" class="range" type="range" min="0" max="100" value="80" aria-label="Громкость">
+      <audio id="audio" preload="metadata" playsinline></audio>
+    </section>
+
+    <section class="card">
+      <h2>Плейлист</h2>
+      <ol id="list" class="list"></ol>
+    </section>
+
+    <section class="card piano-card">
+      <div id="piano" class="piano" aria-label="Пианино"></div>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
